@@ -32,10 +32,10 @@
         vkBridge.send("VKWebAppShowNativeAds", {ad_format:adFormat, use_waterfall:waterfall});
         vkBridge.subscribe((e) => {
         if(e.detail.type == 'VKWebAppShowNativeAdsResult' && e.detail.data.result == true) {
-            unityInstance.SendMessage('VkBridge', 'ShowAdsResultff', 'good');
+            unityInstance.SendMessage('VkBridge', 'ShowAdsResult', 'good');
         }
         if(e.detail.type == 'VKWebAppShowNativeAdsFailed') {
-           unityInstance.SendMessage('VkBridge', 'ShowAdsResultff', 'noGood');
+           unityInstance.SendMessage('VkBridge', 'ShowAdsResult', 'noGood');
         }
         });
       }
